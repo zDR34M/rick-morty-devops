@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: rick-morty
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: true
+  host: rick-morty.local
+  path: /
